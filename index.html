@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sai Sanjana Gujjari — Full-Stack Developer</title>
+<meta name="description" content="Sai Sanjana Gujjari, full-stack developer. Building scalable web applications with React, Next.js, Node, and Python. Clean architecture, performance, and craft.">
+<meta property="og:title" content="Sai Sanjana Gujjari — Full-Stack Developer">
+<meta property="og:description" content="Full-stack developer building scalable web applications. Clean architecture, performance, and craft.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#efe7d2; --bg2:#e7dcc0; --panel:#f5eeda;
+  --ink:#241d10; --dim:#5e553f; --faint:#8a7f63;
+  --gold:#9a7518; --gold-deep:#7c5d12;
+  --line:rgba(60,45,15,.2);
+  --serif:'Cinzel',Georgia,serif;
+  --garamond:'Cormorant Garamond',Georgia,serif;
+  --sans:'Outfit',system-ui,sans-serif;
+  --mono:'JetBrains Mono',monospace;
+  --maxw:1160px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;
+  line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+::selection{background:var(--gold);color:#fbf6e8}
+
+.glow{position:fixed;top:-14%;left:50%;transform:translateX(-50%);width:1000px;max-width:96vw;height:660px;
+  z-index:0;pointer-events:none;background:radial-gradient(ellipse at center,rgba(154,117,24,.12),transparent 62%)}
+.vig{position:fixed;inset:0;z-index:1;pointer-events:none;box-shadow:inset 0 0 220px 50px rgba(90,68,24,.13)}
+.grain{position:fixed;inset:0;z-index:2;pointer-events:none;opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;position:relative;z-index:3}
+
+/* ornaments */
+.orn{display:flex;align-items:center;justify-content:center;gap:14px;margin:0 auto}
+.orn .ln{height:1px;width:74px;background:linear-gradient(90deg,transparent,var(--gold))}
+.orn .ln.r{background:linear-gradient(90deg,var(--gold),transparent)}
+.orn .dia{width:8px;height:8px;background:var(--gold);transform:rotate(45deg)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(9px);
+  background:rgba(239,231,210,.8);border-bottom:1px solid var(--line)}
+nav .row{display:flex;align-items:center;justify-content:space-between;height:66px}
+.brand{font-family:var(--serif);font-weight:700;font-size:16px;letter-spacing:2px}
+.brand b{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:28px;font-size:12.5px;letter-spacing:1px;
+  text-transform:uppercase;color:var(--dim)}
+.nav-links a{transition:color .25s}.nav-links a:hover{color:var(--gold)}
+.btn{display:inline-block;background:var(--gold);color:#fbf6e8;padding:9px 18px;font-size:12px;
+  font-weight:500;letter-spacing:1.5px;text-transform:uppercase;border:1px solid var(--gold);
+  font-family:var(--mono);transition:background .2s,transform .2s}
+.btn:hover{background:var(--gold-deep);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+/* hero */
+header.hero{position:relative;min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:118px 0 80px}
+.title-page{position:relative;width:min(720px,90vw);text-align:center;padding:60px 44px}
+.title-page::before{content:"";position:absolute;inset:0;border:1px solid var(--line);pointer-events:none}
+.title-page::after{content:"";position:absolute;inset:8px;border:1px solid rgba(154,117,24,.22);pointer-events:none}
+.crn{position:absolute;width:16px;height:16px;z-index:2}
+.crn.tl{top:-1px;left:-1px;border-top:2px solid var(--gold);border-left:2px solid var(--gold)}
+.crn.tr{top:-1px;right:-1px;border-top:2px solid var(--gold);border-right:2px solid var(--gold)}
+.crn.bl{bottom:-1px;left:-1px;border-bottom:2px solid var(--gold);border-left:2px solid var(--gold)}
+.crn.br{bottom:-1px;right:-1px;border-bottom:2px solid var(--gold);border-right:2px solid var(--gold)}
+.emblem{width:46px;height:46px;margin:0 auto 22px;display:block;color:var(--gold)}
+.kick{font-family:var(--mono);font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.title-page h1{font-family:var(--serif);font-weight:900;font-size:clamp(40px,7.6vw,86px);line-height:1.02;letter-spacing:1px}
+.verse{font-family:var(--garamond);font-style:italic;font-size:clamp(18px,2.6vw,25px);color:var(--dim);margin:24px auto 30px;max-width:34ch;line-height:1.4}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:10px}
+.socials{display:flex;gap:24px;justify-content:center;margin-top:28px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim);font-family:var(--mono)}
+.socials a:hover{color:var(--gold)}
+
+/* sections */
+section{padding:110px 0;position:relative}
+.smark{font-family:var(--serif);font-size:13px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:14px}
+.smark::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,var(--line),transparent)}
+h2{font-family:var(--serif);font-weight:700;font-size:clamp(28px,4.4vw,48px);line-height:1.1;letter-spacing:.5px;margin-bottom:22px}
+.lead{font-family:var(--garamond);font-size:clamp(18px,2vw,22px);color:var(--dim);max-width:60ch;line-height:1.5;font-style:italic}
+
+/* origins */
+.origins{display:grid;grid-template-columns:300px 1fr;gap:60px;align-items:center}
+.medallion{position:relative;width:280px;aspect-ratio:1;margin:0 auto;border-radius:50%}
+.medallion .ring{position:absolute;inset:0;border-radius:50%;border:1px solid var(--gold);
+  box-shadow:0 0 0 8px var(--bg),0 0 0 9px rgba(154,117,24,.45),0 24px 60px rgba(80,60,20,.25)}
+.medallion .ph{position:absolute;inset:16px;border-radius:50%;overflow:hidden}
+.medallion img{width:100%;height:100%;object-fit:cover;filter:none}
+.medallion .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(165deg,rgba(154,117,24,.06),transparent 60%)}
+.medallion .swap{position:absolute;bottom:6px;left:50%;transform:translateX(-50%);z-index:3;font-family:var(--mono);font-size:8px;color:#fbf6e8;background:rgba(40,30,10,.6);padding:3px 7px;letter-spacing:.5px;white-space:nowrap}
+.medallion .star{position:absolute;width:7px;height:7px;background:var(--gold);transform:rotate(45deg);box-shadow:0 0 8px rgba(154,117,24,.7)}
+.medallion .s1{top:-2px;left:50%}.medallion .s2{bottom:18px;right:-2px}.medallion .s3{bottom:30px;left:-4px}
+.about p{font-size:17px;color:var(--dim);margin-bottom:18px;max-width:58ch}
+.about p b{color:var(--ink);font-weight:500}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.pill{font-size:12.5px;color:var(--dim);border:1px solid var(--line);padding:6px 13px;letter-spacing:.3px}
+.pill.live{border-color:rgba(154,117,24,.5);color:var(--gold)}
+.edu{margin-top:26px;padding-top:22px;border-top:1px solid var(--line);font-size:14.5px;color:var(--dim)}
+.edu b{color:var(--ink);font-weight:500;font-family:var(--garamond);font-size:17px}
+.edu span{font-family:var(--mono);font-size:12px;color:var(--faint);float:right}
+
+/* chronicle */
+.chron{border-left:1px solid var(--line);margin-left:6px;padding-left:34px;margin-top:10px}
+.entry{position:relative;padding-bottom:46px}
+.entry:last-child{padding-bottom:0}
+.entry::before{content:"";position:absolute;left:-40px;top:6px;width:9px;height:9px;background:var(--gold);transform:rotate(45deg);box-shadow:0 0 0 4px var(--bg)}
+.entry .top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;align-items:baseline;margin-bottom:6px}
+.entry h3{font-family:var(--garamond);font-size:24px;font-weight:600;color:var(--ink)}
+.entry h3 span{color:var(--gold)}
+.entry .when{font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:.5px}
+.entry ul{list-style:none;margin-top:8px}
+.entry li{position:relative;padding-left:20px;font-size:15px;color:var(--dim);margin-bottom:9px;max-width:70ch}
+.entry li::before{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;background:var(--gold-deep);transform:rotate(45deg)}
+
+/* artifacts (projects) */
+.arts{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+.art{position:relative;border:1px solid var(--line);background:var(--panel);padding:28px;display:flex;flex-direction:column;transition:transform .3s,border-color .3s}
+.art:hover{transform:translateY(-5px);border-color:rgba(154,117,24,.55)}
+.art::before{content:"";position:absolute;top:0;left:0;width:30px;height:30px;border-top:2px solid var(--gold);border-left:2px solid var(--gold)}
+.art h3{font-family:var(--garamond);font-size:23px;font-weight:600;margin-bottom:8px}
+.art .tags{font-family:var(--mono);font-size:10.5px;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:13px}
+.art p{font-size:14.5px;color:var(--dim);line-height:1.6;margin-bottom:18px;flex:1}
+.art .gh{font-family:var(--mono);font-size:12px;letter-spacing:.5px;color:var(--ink);border-bottom:1px solid var(--line);padding-bottom:3px;align-self:flex-start;transition:.2s}
+.art .gh:hover{color:var(--gold);border-color:var(--gold)}
+
+/* codex */
+.codex{display:grid;grid-template-columns:repeat(3,1fr);gap:38px;margin-top:20px}
+.codex h4{font-family:var(--serif);font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.codex ul{list-style:none}.codex li{font-size:15px;color:var(--dim);padding:6px 0}
+
+/* honors */
+.honors{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:20px}
+.honor{border:1px solid var(--line);padding:28px;display:flex;gap:18px;align-items:flex-start;background:var(--panel)}
+.honor .ic{color:var(--gold);flex:none;margin-top:2px}
+.honor .ic svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.4}
+.honor h4{font-family:var(--garamond);font-size:20px;font-weight:600;margin-bottom:6px}
+.honor p{font-size:14.5px;color:var(--dim)}
+
+/* contact */
+.contact{text-align:center;padding:140px 0}
+.contact h2{font-size:clamp(38px,6.5vw,76px);margin-bottom:24px}
+.contact .lead{margin:0 auto 34px}
+.contact .socials{margin-top:34px}
+
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--faint);font-size:12px;font-family:var(--mono);letter-spacing:.5px}
+footer .row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:880px){
+  .origins,.codex,.honors,.arts{grid-template-columns:1fr}
+  .codex{gap:26px}.origins{gap:36px}.medallion{width:230px}
+  .nav-links a:not(.btn){display:none}
+}
+@media(max-width:520px){section{padding:78px 0}.title-page{padding:44px 22px}.edu span{float:none;display:block;margin-top:4px}}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="glow"></div><div class="vig"></div><div class="grain"></div>
+
+<nav>
+  <div class="wrap row">
+    <a href="#top" class="brand">Sai Sanjana <b>Gujjari</b></a>
+    <div class="nav-links">
+      <a href="#origins">Origins</a>
+      <a href="#work">Work</a>
+      <a href="#artifacts">Projects</a>
+      <a href="#codex">Skills</a>
+      <a class="btn" href="resume.html">Résumé</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="title-page rv">
+    <span class="crn tl"></span><span class="crn tr"></span><span class="crn bl"></span><span class="crn br"></span>
+    <svg class="emblem" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3">
+      <circle cx="24" cy="24" r="9"/>
+      <g stroke-linecap="round"><path d="M24 2v7M24 39v7M2 24h7M39 24h7M9 9l5 5M34 34l5 5M39 9l-5 5M14 34l-5 5"/></g>
+    </svg>
+    <p class="kick">Full-Stack Developer</p>
+    <h1>Sai Sanjana<br>Gujjari</h1>
+    <div class="orn"><span class="ln"></span><span class="dia"></span><span class="ln r"></span></div>
+    <p class="verse">Building scalable worlds from clean architecture, one API at a time.</p>
+    <div class="cta-row">
+      <a class="btn" href="#work">View work</a>
+      <a class="btn ghost" href="resume.html">Résumé</a>
+    </div>
+    <div class="socials">
+      <a href="https://github.com/GujjariSaiSanjana" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/sai-sanjana-gujjari" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:gujjarisaisanjana@gmail.com">Email</a>
+    </div>
+  </div>
+</header>
+
+<section id="origins">
+  <div class="wrap origins">
+    <div class="medallion rv">
+      <div class="ring"></div>
+      <div class="ph"><img src="assets/avatar.png" alt="Sai Sanjana Gujjari"></div>
+      <span class="star s1"></span><span class="star s2"></span><span class="star s3"></span>
+    </div>
+    <div class="about rv">
+      <p class="smark">Origins</p>
+      <h2>The developer behind the code.</h2>
+      <p>I am a <b>full-stack developer</b> who builds scalable web applications with React.js, Next.js, Node.js, and Python. I care about <b>clean architecture</b>, performance, and interfaces that feel right on every screen.</p>
+      <p>I design REST APIs, integrate databases, and deploy on AWS. Lately I have been building <b>AI and RAG projects</b>. When I am not shipping, I am usually deep in <b>mythology</b>, where I find what I love in engineering: structure, story, and systems that endure.</p>
+      <div class="pills">
+        <span class="pill">Hyderabad, India</span>
+        <span class="pill">CS '26</span>
+        <span class="pill live">Open to opportunities</span>
+      </div>
+      <p class="edu"><b>Vishwa Vishwani Institute of Systems and Management</b> <span>2022 - 2026</span><br>Bachelor of Science in Computer Science</p>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <p class="smark rv">The Chronicle</p>
+    <h2 class="rv">Experience.</h2>
+    <div class="chron">
+      <div class="entry rv">
+        <div class="top">
+          <h3>Secnode <span>/ Frontend Developer Intern</span></h3>
+          <span class="when">May 2025 - Jul 2025 · Remote</span>
+        </div>
+        <ul>
+          <li>Optimized a large-scale Next.js application with lazy loading, code splitting, and efficient data fetching.</li>
+          <li>Integrated and managed content workflows with Sanity CMS for dynamic rendering and maintainability.</li>
+          <li>Worked with TypeScript backend APIs, aligning data contracts with the frontend to cut integration issues.</li>
+          <li>Reduced API response latency by optimizing request handling and frontend to backend communication.</li>
+          <li>Improved scalability and responsiveness following modern Next.js architecture patterns.</li>
+        </ul>
+      </div>
+      <div class="entry rv">
+        <div class="top">
+          <h3>Knowvation Learning <span>/ Software Engineer Intern</span></h3>
+          <span class="when">Jan 2025 - Apr 2025 · Remote</span>
+        </div>
+        <ul>
+          <li>Built a scalable certificate verification system with unique ID validation, cutting manual verification effort by 30 percent.</li>
+          <li>Built a responsive frontend in TypeScript, React, and Tailwind CSS, improving mobile performance by 25 percent.</li>
+          <li>Integrated backend services with centralized databases, optimizing query performance and reliability.</li>
+          <li>Designed and tested REST API workflows in Postman, improving debugging and release speed.</li>
+          <li>Used Git and CI/CD pipelines for version control and automated deployments.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="artifacts">
+  <div class="wrap">
+    <p class="smark rv">Artifacts</p>
+    <h2 class="rv">Projects.</h2>
+    <div class="arts">
+      <div class="art rv">
+        <h3>AI Traveller Agent</h3>
+        <p class="tags">TypeScript · AI Agent</p>
+        <p>An AI agent that plans trips end to end, turning a simple prompt into a structured itinerary.</p>
+        <a class="gh" href="https://github.com/GujjariSaiSanjana/Ai-traveller-agent" target="_blank" rel="noopener">View on GitHub →</a>
+      </div>
+      <div class="art rv">
+        <h3>SAST Agent</h3>
+        <p class="tags">TypeScript · Security · AI</p>
+        <p>A static application security testing agent that scans source code and surfaces vulnerabilities.</p>
+        <a class="gh" href="https://github.com/GujjariSaiSanjana/SAST-Agent" target="_blank" rel="noopener">View on GitHub →</a>
+      </div>
+      <div class="art rv">
+        <h3>WebCrawl RAG</h3>
+        <p class="tags">Python · RAG</p>
+        <p>Crawls the web and answers questions over what it gathers, using retrieval-augmented generation.</p>
+        <a class="gh" href="https://github.com/GujjariSaiSanjana/WebCrawlRAG" target="_blank" rel="noopener">View on GitHub →</a>
+      </div>
+      <div class="art rv">
+        <h3>PDF RAG</h3>
+        <p class="tags">JavaScript · RAG</p>
+        <p>Chat with your PDFs: ask questions and get answers grounded in the document itself.</p>
+        <a class="gh" href="https://github.com/GujjariSaiSanjana/Pdf-RAG" target="_blank" rel="noopener">View on GitHub →</a>
+      </div>
+      <div class="art rv">
+        <h3>Edu RAG AI</h3>
+        <p class="tags">TypeScript · RAG · AI</p>
+        <p>An AI study companion that answers questions from course material and learning content.</p>
+        <a class="gh" href="https://github.com/GujjariSaiSanjana/Edu-RAG-AI" target="_blank" rel="noopener">View on GitHub →</a>
+      </div>
+      <div class="art rv">
+        <h3>Waste Recycling System</h3>
+        <p class="tags">TypeScript · Full-Stack</p>
+        <p>Full-stack app to track and manage waste collection and recycling workflows. Built in 24 hours, hackathon 3rd prize.</p>
+        <a class="gh" href="https://github.com/GujjariSaiSanjana/Waste_recycling" target="_blank" rel="noopener">View on GitHub →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="codex">
+  <div class="wrap">
+    <p class="smark rv">The Codex</p>
+    <h2 class="rv">Skills.</h2>
+    <div class="codex">
+      <div class="rv"><h4>Languages</h4><ul><li>JavaScript</li><li>TypeScript</li><li>Python</li><li>Java</li><li>SQL</li></ul></div>
+      <div class="rv"><h4>Frontend</h4><ul><li>React.js</li><li>Next.js</li><li>Tailwind CSS</li><li>Bootstrap</li><li>HTML, CSS</li></ul></div>
+      <div class="rv"><h4>Backend</h4><ul><li>Node.js</li><li>Express.js</li><li>REST APIs</li><li>Microservices (basic)</li></ul></div>
+      <div class="rv"><h4>Databases</h4><ul><li>PostgreSQL</li><li>MySQL</li><li>MongoDB</li><li>Redis</li></ul></div>
+      <div class="rv"><h4>Cloud</h4><ul><li>AWS EC2</li><li>AWS S3</li><li>AWS Lambda</li></ul></div>
+      <div class="rv"><h4>Tools</h4><ul><li>Git</li><li>GitHub Actions</li><li>Postman</li><li>Linux</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="honors">
+  <div class="wrap">
+    <p class="smark rv">Honors</p>
+    <h2 class="rv">Achievements.</h2>
+    <div class="honors">
+      <div class="honor rv">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 21l-4.9 2.6.9-5.5-4-3.9 5.5-.8z"/></svg></span>
+        <div><h4>Co-Founder &amp; Mentor, CodeXP Club</h4><p>Mentored students in full-stack development and ran technical sessions.</p></div>
+      </div>
+      <div class="honor rv">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0zM7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3"/></svg></span>
+        <div><h4>Hackathon, 3rd Prize</h4><p>Built a full-stack waste management system in 24 hours among 80+ teams.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <p class="smark rv" style="justify-content:center">Send word</p>
+    <h2 class="rv">Let's build something <span style="color:var(--gold)">lasting</span>.</h2>
+    <p class="lead rv">Open to full-stack and frontend roles. Remote or Hyderabad.</p>
+    <div class="rv" style="display:flex;justify-content:center"><a class="btn" href="mailto:gujjarisaisanjana@gmail.com">Email me</a></div>
+    <div class="socials rv">
+      <a href="https://github.com/GujjariSaiSanjana" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/sai-sanjana-gujjari" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="resume.html">Résumé</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap row">
+    <span>Sai Sanjana Gujjari, 2026</span>
+    <span>Built with structure and story</span>
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.14});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
