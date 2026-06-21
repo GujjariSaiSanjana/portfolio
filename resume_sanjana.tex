@@ -1,0 +1,207 @@
+%-------------------------
+% Resume in LaTeX
+% Author: Gujjari Sai Sanjana
+% Based on the widely used "Jake's Resume" template
+% License: MIT
+%-------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+%----------FONT OPTIONS----------
+\usepackage[T1]{fontenc}
+\usepackage[sfdefault]{roboto}
+
+%----------PAGE LAYOUT----------
+\pagestyle{fancy}
+\fancyhf{}                 % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+%-------------------------
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=0pt, parsep=1pt, topsep=2pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------------------------
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Sai Sanjana Gujjari} \\ \vspace{3pt}
+    {\small \textbf{Full-Stack Developer}} \\ \vspace{4pt}
+    \small
+    Hyderabad, India $|$ +91 78425 02935 $|$
+    \href{mailto:gujjarisaisanjana@gmail.com}{\underline{gujjarisaisanjana@gmail.com}} \\ \vspace{2pt}
+    \href{https://saisanjana.vercel.app/}{\underline{Portfolio}} $|$
+    \href{https://www.linkedin.com/in/sai-sanjana-gujjari}{\underline{LinkedIn}} $|$
+    \href{https://github.com/GujjariSaiSanjana}{\underline{GitHub}}
+\end{center}
+
+%-----------SUMMARY-----------
+\section{Summary}
+\resumeSubHeadingListStart
+  \resumeItem{Full-Stack Developer skilled in \textbf{React, Next.js, Node.js, and Python}, with internship experience shipping production features at fast-paced startups. Built \textbf{AI-powered tools (RAG and LLM agents)}, delivered a certificate-verification system that cut manual effort by \textbf{30\%}, and optimized a frontend that improved mobile performance by \textbf{25\%}. Strong in \textbf{REST API design, database integration, AWS deployment, clean architecture, and Agile delivery}.}
+\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Frontend Developer Intern}{May 2025 -- Jul 2025}
+    {Secnode}{Remote}
+    \resumeItemListStart
+      \resumeItem{Optimized a \textbf{large-scale Next.js application} with lazy loading, code splitting, and efficient data fetching.}
+      \resumeItem{Integrated content workflows with \textbf{Sanity CMS} for dynamic content rendering and easier maintenance.}
+      \resumeItem{Aligned \textbf{TypeScript backend APIs} with frontend data contracts to reduce integration issues.}
+      \resumeItem{Reduced API response latency by streamlining request handling and frontend-to-backend communication.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Software Engineer Intern}{Jan 2025 -- Apr 2025}
+    {Knowvation Learning Pvt. Ltd}{Remote}
+    \resumeItemListStart
+      \resumeItem{Built a scalable \textbf{certificate verification system} with unique-ID validation, cutting manual verification effort by \textbf{30\%}.}
+      \resumeItem{Developed a responsive frontend in \textbf{TypeScript, React, and Tailwind CSS}, improving mobile performance by \textbf{25\%}.}
+      \resumeItem{Designed and tested \textbf{REST API} workflows in Postman, optimizing query performance and release speed.}
+      \resumeItem{Managed version control and automated deployments using \textbf{Git and CI/CD pipelines}.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {\textbf{\href{https://github.com/GujjariSaiSanjana/Ai-traveller-agent}{\underline{AI Traveller Agent}}} $|$ \emph{TypeScript, AI Agent, LLM}}{}
+    \resumeItemListStart
+      \resumeItem{Built an AI agent that turns a single prompt into a structured, day-by-day trip itinerary, orchestrating LLM calls with tool use.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{\href{https://github.com/GujjariSaiSanjana/SAST-Agent}{\underline{SAST Agent}}} $|$ \emph{TypeScript, Security, AI}}{}
+    \resumeItemListStart
+      \resumeItem{Developed a \textbf{static application security testing} agent that scans source code and surfaces vulnerabilities, pairing rule-based analysis with LLM-assisted reasoning.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{\href{https://github.com/GujjariSaiSanjana/Pdf-RAG}{\underline{RAG Applications (PDF, Web, Education)}}} $|$ \emph{Python, TypeScript, RAG}}{}
+    \resumeItemListStart
+      \resumeItem{Built \textbf{Retrieval-Augmented Generation} apps over PDFs, web pages, and course material using chunking, embeddings, and vector retrieval to keep answers grounded.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{\href{https://github.com/GujjariSaiSanjana/Waste_recycling}{\underline{Waste Recycling Management System}}} $|$ \emph{TypeScript, React.js, REST}}{}
+    \resumeItemListStart
+      \resumeItem{Built a full-stack waste-tracking app with a responsive React frontend and REST APIs in 24 hours; won \textbf{3rd prize} among 80+ teams.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+\resumeSubHeadingListStart
+  \item[]
+    \small{
+      \textbf{Languages:} JavaScript, TypeScript, Python, Java, SQL \\ \vspace{2pt}
+      \textbf{Frontend:} React.js, Next.js, Tailwind CSS, Bootstrap \\ \vspace{2pt}
+      \textbf{Backend:} Node.js, Express.js, REST APIs, Microservices \\ \vspace{2pt}
+      \textbf{AI / ML:} RAG, LLM APIs, Embeddings, Vector Search, AI Agents \\ \vspace{2pt}
+      \textbf{Databases:} PostgreSQL, MySQL, MongoDB, Redis \\ \vspace{2pt}
+      \textbf{Cloud \& Tools:} AWS (EC2, S3, Lambda), Git, GitHub Actions, Postman, Linux
+    }
+\resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Bachelor of Science in Computer Science}{2022 -- 2026}
+    {Vishwa Vishwani Institute of Systems and Management}{Hyderabad, India}
+\resumeSubHeadingListEnd
+
+%-----------CERTIFICATIONS-----------
+\section{Certifications}
+\resumeSubHeadingListStart
+  \item[]
+    \small{
+      \textbf{NxtWave (CCBP):} Developer Foundations, JavaScript Essentials, Dynamic Web Applications, Responsive Web Design (Flexbox), Node.js, Introduction to Databases.
+    }
+\resumeSubHeadingListEnd
+\vspace{-4pt}
+
+%-----------ACHIEVEMENTS-----------
+\section{Achievements}
+\resumeSubHeadingListStart
+  \resumeItemListStart
+    \resumeItem{\textbf{Co-Founder \& Mentor, CodeXP Club:} Mentored students in full-stack development and led technical sessions.}
+    \resumeItem{\textbf{Hackathon, 3rd Prize:} Built a full-stack waste management system in 24 hours among 80+ teams.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}
